@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martha's Vineyard — Vacation Cheat Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16324A;
+    --ocean:#3F7CA0;
+    --teal:#6B9E97;
+    --sand:#F4EEDD;
+    --card:#FFFDF8;
+    --coral:#E8834F;
+    --gold:#E0AC42;
+    --line:#D8CFB8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--navy);
+    font-family:'Work Sans',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    margin:0;
+  }
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.72rem;
+    color:var(--ocean);
+  }
+
+  /* HERO */
+  header.hero{
+    position:relative;
+    padding:3.2rem 1.5rem 2.4rem;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at top, rgba(63,124,160,0.12), transparent 60%),
+      var(--sand);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .wave-row{
+    display:flex; justify-content:center; gap:.4rem; margin-bottom:.8rem;
+    font-size:1.3rem; opacity:.8;
+  }
+  header.hero h1{
+    font-size:clamp(2.3rem, 6vw, 3.6rem);
+    font-weight:600;
+    line-height:1.02;
+    color:var(--navy);
+  }
+  header.hero h1 span{ color:var(--coral); font-style:italic; font-weight:500;}
+  .subtitle{
+    margin-top:.6rem;
+    font-size:1.05rem;
+    color:#4A5A63;
+    font-weight:500;
+  }
+  .homebase{
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    margin-top:1.4rem;
+    background:var(--navy);
+    color:var(--sand);
+    padding:.65rem 1.2rem;
+    border-radius:999px;
+    font-family:'Space Mono',monospace;
+    font-size:.82rem;
+    letter-spacing:.02em;
+  }
+  .homebase .dot{ width:7px;height:7px;border-radius:50%;background:var(--coral); flex-shrink:0; }
+
+  /* QUICK NAV */
+  nav.quicknav{
+    position:sticky; top:0; z-index:50;
+    display:flex; gap:.5rem;
+    overflow-x:auto;
+    padding:.7rem 1rem;
+    background:rgba(244,238,221,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    scrollbar-width:none;
+  }
+  nav.quicknav::-webkit-scrollbar{display:none;}
+  nav.quicknav a{
+    flex:0 0 auto;
+    text-decoration:none;
+    font-family:'Space Mono',monospace;
+    font-size:.75rem;
+    letter-spacing:.03em;
+    color:var(--navy);
+    border:1px solid var(--line);
+    background:var(--card);
+    padding:.45rem .9rem;
+    border-radius:999px;
+    white-space:nowrap;
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  nav.quicknav a:hover, nav.quicknav a:focus-visible{
+    background:var(--navy); color:var(--sand); border-color:var(--navy);
+  }
+
+  /* ROUTE / MAIN */
+  main{
+    max-width:900px;
+    margin:0 auto;
+    padding:2.6rem 1.3rem 1rem;
+    position:relative;
+  }
+  .route-caption{
+    text-align:center;
+    max-width:520px;
+    margin:0 auto 2.6rem;
+    color:#4A5A63;
+    font-size:.95rem;
+  }
+  .route-caption strong{ color:var(--navy); }
+
+  .route{
+    position:relative;
+    padding-left:2.4rem;
+  }
+  .route::before{
+    content:"";
+    position:absolute;
+    left:11px; top:8px; bottom:8px;
+    width:2px;
+    background-image:linear-gradient(var(--ocean) 60%, transparent 0%);
+    background-size:2px 12px;
+    background-repeat:repeat-y;
+  }
+
+  .stop{
+    position:relative;
+    margin-bottom:2.1rem;
+  }
+  .stop-marker{
+    position:absolute;
+    left:-2.4rem;
+    top:.35rem;
+    width:24px; height:24px;
+    border-radius:50%;
+    background:var(--card);
+    border:2px solid var(--ocean);
+    display:flex; align-items:center; justify-content:center;
+    font-size:.85rem;
+  }
+  .stop.home .stop-marker{ border-color:var(--coral); background:var(--coral); }
+  .stop.sunset .stop-marker{ border-color:var(--gold); }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:1.3rem 1.4rem 1.4rem;
+    box-shadow:0 1px 0 rgba(22,50,74,0.03);
+  }
+  .card-head{
+    display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap;
+    margin-bottom:.15rem;
+  }
+  .card-head .icon{ font-size:1.3rem; }
+  .card-head h3{ font-size:1.4rem; font-weight:600; color:var(--navy); }
+  .card-head .tag{
+    font-family:'Space Mono',monospace;
+    font-size:.68rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--coral);
+    border:1px solid var(--coral);
+    border-radius:999px;
+    padding:.12rem .55rem;
+    margin-left:.1rem;
+  }
+  .vibe{
+    color:#3D4C55;
+    font-size:.98rem;
+    line-height:1.55;
+    margin:.5rem 0 .9rem;
+  }
+  .divider{
+    border:none;
+    border-top:1px dashed var(--line);
+    margin:.9rem 0;
+  }
+  .eatshop{ font-size:.92rem; line-height:1.6; color:#3D4C55; }
+  .eatshop .label{
+    font-family:'Space Mono',monospace;
+    font-size:.68rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:block;
+    margin-bottom:.3rem;
+  }
+  .eatshop b{ color:var(--navy); font-weight:600; }
+
+  /* TODO */
+  section.todo{
+    max-width:900px;
+    margin:1.5rem auto 3rem;
+    padding:0 1.3rem;
+  }
+  .todo-card{
+    background:var(--navy);
+    color:var(--sand);
+    border-radius:18px;
+    padding:1.8rem 1.6rem 1.6rem;
+  }
+  .todo-card h2{
+    font-size:1.5rem;
+    font-weight:600;
+    color:var(--sand);
+    margin-bottom:1.1rem;
+  }
+  .todo-list{ list-style:none; margin:0; padding:0; display:grid; gap:.85rem; }
+  .todo-list li{
+    display:flex; gap:.75rem; align-items:flex-start;
+    font-size:.95rem; line-height:1.5;
+  }
+  .todo-list .ticon{
+    font-size:1.15rem; flex-shrink:0; margin-top:.05rem;
+  }
+  .todo-list b{ color:#fff; }
+  .todo-list span.sub{ color:#C9D6DC; }
+
+  footer{
+    text-align:center;
+    padding:1.6rem 1rem 2.4rem;
+    font-family:'Space Mono',monospace;
+    font-size:.72rem;
+    letter-spacing:.04em;
+    color:#8B9A94;
+  }
+
+  @media (max-width:520px){
+    .route{ padding-left:2rem; }
+    .stop-marker{ left:-2rem; width:20px; height:20px; font-size:.75rem; }
+    .card{ padding:1.1rem 1.05rem 1.2rem; }
+    .card-head h3{ font-size:1.22rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wave-row">🌊 🐎 ⛵ 🍂 🧭</div>
+  <h1>Martha's <span>Vineyard</span></h1>
+  <div class="subtitle">Vacation Cheat Sheet</div>
+  <div class="homebase"><span class="dot"></span>HOME BASE — 100 Whaler's Walk, Edgartown, MA 02539</div>
+</header>
+
+<nav class="quicknav" aria-label="Jump to town">
+  <a href="#vineyardhaven">⛴️ Vineyard Haven</a>
+  <a href="#oakbluffs">🎠 Oak Bluffs</a>
+  <a href="#edgartown">🎡 Edgartown</a>
+  <a href="#westtisbury">🌿 West Tisbury</a>
+  <a href="#chilmark">🌅 Chilmark</a>
+  <a href="#aquinnah">❤️ Aquinnah</a>
+  <a href="#todo">🧭 To-Do</a>
+</nav>
+
+<main>
+  <p class="route-caption">Towns run <strong>east to west</strong> across the island — ferry in at Vineyard Haven, home base in Edgartown, sunset out at Aquinnah.</p>
+
+  <div class="route">
+
+    <div class="stop" id="vineyardhaven">
+      <div class="stop-marker">⛴️</div>
+      <div class="card">
+        <div class="card-head"><span class="icon">⛴️</span><h3>Vineyard Haven</h3></div>
+        <p class="vibe">Boutique shopping plus the Martha's Vineyard Museum. Usually the first stop off the ferry.</p>
+        <hr class="divider">
+        <div class="eatshop">
+          <span class="label">Eat</span>
+          Ocean Club · 9 Craft Kitchen &amp; Bar · The Attic · Catboat Coffee · Black Dog · Art Cliff Diner
+          <br><br>
+          <span class="label">Shop</span>
+          India Rose Collective <b>(BO)</b> · Bee Blunt <b>(BO)</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop" id="oakbluffs">
+      <div class="stop-marker">🎠</div>
+      <div class="card">
+        <div class="card-head"><span class="icon">🎠</span><h3>Oak Bluffs</h3><span class="tag">sunrise</span></div>
+        <p class="vibe">Lively and colorful — MVAAFF, Gingerbread Cottages, Circuit Ave, Inkwell Beach, Flying Horses Carousel.</p>
+        <hr class="divider">
+        <div class="eatshop">
+          <span class="label">Eat</span>
+          Black Joy Kitchen <b>(BO)</b> · Biscuits <b>(BO)</b> · Winston's · Vineyard Caribbean Cuisine <b>(BO)</b> · Honorary Tavern <b>(BO)</b> · Donovan's Reef <b>(BO)</b> · Back Door Donuts · Midnight Taco · Lookout Tavern · Mocha Motts · Dos Mas · Nancy's · Aalia's Coffee · The Ritz · Noman's
+          <br><br>
+          <span class="label">Shop</span>
+          C'est La Vie <b>(BO)</b> · Island-Life Studio <b>(BO)</b> · Cousen Rose Gallery <b>(BO)</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop home" id="edgartown">
+      <div class="stop-marker">🏠</div>
+      <div class="card">
+        <div class="card-head"><span class="icon">🎡</span><h3>Edgartown</h3><span class="tag">home base · sunrise</span></div>
+        <p class="vibe">Charming streets, boutiques, lighthouses, and classic coastal vibes.</p>
+        <hr class="divider">
+        <div class="eatshop">
+          <span class="label">Eat</span>
+          Atlantic Fish &amp; Chop House · Bettini · Rockfish · Sweet Life Café · Behind the Bookstore · Rosewater · Atria · 19 Raw · Pelican Club · Seafood Shanty · Edgartown Diner · Toccopuro Coffee · Summer Shades
+          <br><br>
+          <span class="label">Shop</span>
+          Edgartown Books · The Blackdog
+        </div>
+      </div>
+    </div>
+
+    <div class="stop" id="westtisbury">
+      <div class="stop-marker">🌿</div>
+      <div class="card">
+        <div class="card-head"><span class="icon">🌿</span><h3>West Tisbury</h3></div>
+        <p class="vibe">Peaceful farms, nature preserves, and Lambert's Cove Beach — great for a slower, scenic stop.</p>
+      </div>
+    </div>
+
+    <div class="stop sunset" id="chilmark">
+      <div class="stop-marker">🌅</div>
+      <div class="card">
+        <div class="card-head"><span class="icon">🌅</span><h3>Chilmark</h3><span class="tag">sunset</span></div>
+        <p class="vibe">Quiet, scenic, and coastal, with Menemsha fishing village views.</p>
+        <hr class="divider">
+        <div class="eatshop">
+          <span class="label">Eat</span>
+          Larsen's Fish Market · Homeport Restaurant &amp; Oyster Bar
+        </div>
+      </div>
+    </div>
+
+    <div class="stop sunset" id="aquinnah">
+      <div class="stop-marker">❤️</div>
+      <div class="card">
+        <div class="card-head"><span class="icon">❤️</span><h3>Aquinnah</h3><span class="tag">sunset</span></div>
+        <p class="vibe">Indigenous roots, Gay Head Light, and the stunning Aquinnah Clay Cliffs.</p>
+        <hr class="divider">
+        <div class="eatshop">
+          <span class="label">Eat / Stay</span>
+          The Outermost Inn · Orange Peel Bakery
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<section class="todo" id="todo">
+  <div class="todo-card">
+    <h2>🧭 Quick To-Do List</h2>
+    <ul class="todo-list">
+      <li><span class="ticon">🌉</span><span><b>Jaws Bridge —</b> <span class="sub">jump in the water for a fun adventure between Oak Bluffs and Edgartown.</span></span></li>
+      <li><span class="ticon">🌅</span><span><b>Sunrise —</b> <span class="sub">Inkwell Beach or Edgartown Lighthouse.</span></span></li>
+      <li><span class="ticon">🌇</span><span><b>Sunset —</b> <span class="sub">Menemsha Beach or Aquinnah Cliffs Overlook.</span></span></li>
+      <li><span class="ticon">🎬</span><span><b>MVAAFF —</b> <span class="sub">watch for day tickets or showings once released.</span></span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>(BO) = Black-owned business · Martha's Vineyard Cheat Sheet</footer>
+
+</body>
+</html>
