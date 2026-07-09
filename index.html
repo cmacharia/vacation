@@ -372,6 +372,64 @@
         }
       }
 
+      /* BOOK AHEAD */
+      section.bookahead {
+        max-width: 900px;
+        margin: 0 auto 2.2rem;
+        padding: 0 1.3rem;
+      }
+      .book-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--ocean);
+        border-radius: 12px;
+        padding: 1rem 1.2rem;
+        margin-bottom: 0.8rem;
+      }
+      .book-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+      }
+      .book-icon {
+        font-size: 1.5rem;
+        line-height: 1.2;
+      }
+      .book-copy h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 0.2rem;
+      }
+      .book-copy p {
+        font-size: 0.88rem;
+        color: #4a5a63;
+        line-height: 1.5;
+        margin: 0;
+        max-width: 46ch;
+      }
+      .book-link {
+        flex: 0 0 auto;
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #fff;
+        background: var(--ocean);
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        white-space: nowrap;
+        transition: background 0.15s;
+      }
+      .book-link:hover,
+      .book-link:focus-visible {
+        background: var(--navy);
+      }
+
       /* NIGHTLIFE & PARTIES */
       section.parties {
         max-width: 900px;
@@ -496,6 +554,7 @@
       <a href="#westtisbury">🌿 West Tisbury</a>
       <a href="#chilmark">🌅 Chilmark</a>
       <a href="#aquinnah">❤️ Aquinnah</a>
+      <a href="#bookahead">🚐 Book Ahead</a>
       <a href="#parties">🎉 Parties</a>
       <a href="#todo">🧭 To-Do</a>
     </nav>
@@ -931,6 +990,55 @@
       </div>
     </main>
 
+    <section class="bookahead" id="bookahead">
+      <div class="parties-head">
+        <h2>🚐 Book Ahead</h2>
+        <p class="parties-sub">
+          Reserve these before you land — both fill up fast in August.
+        </p>
+      </div>
+
+      <div class="book-card">
+        <div class="book-row">
+          <span class="book-icon">🚌</span>
+          <div class="book-copy">
+            <h3>All-Island Bus Tour</h3>
+            <p>
+              Fri, Aug 7 — narrated 3-hour loop of the whole island with
+              HomeGrown Tours, hop-off stops included.
+            </p>
+          </div>
+        </div>
+        <a
+          class="book-link"
+          href="https://www.viator.com/search/40250P10?mcid=70066"
+          target="_blank"
+          rel="noopener"
+          >Book on Viator →</a
+        >
+      </div>
+
+      <div class="book-card">
+        <div class="book-row">
+          <span class="book-icon">🚲</span>
+          <div class="book-copy">
+            <h3>Bike Rentals</h3>
+            <p>
+              All Star MV Bike Rentals — Oak Bluffs &amp; Vineyard Haven shops,
+              free island-wide delivery.
+            </p>
+          </div>
+        </div>
+        <a
+          class="book-link"
+          href="https://marthasvineyardbikerentals.com/"
+          target="_blank"
+          rel="noopener"
+          >Reserve Bikes →</a
+        >
+      </div>
+    </section>
+
     <section class="parties" id="parties">
       <div class="parties-head">
         <h2>🎉 Nightlife &amp; Parties</h2>
@@ -1028,9 +1136,17 @@
         <div class="party-card">
           <div class="party-row">
             <span class="party-time">10PM–2AM</span>
-            <span class="party-name">NOIR en Blanc</span>
+            <span class="party-name"
+              ><a
+                href="https://posh.vip/e/noir-en-blanc-ii-by-full-disclosure"
+                target="_blank"
+                rel="noopener"
+                >NOIR en Blanc II</a
+              >
+              — by Full Disclosure</span
+            >
           </div>
-          <span class="party-tag muted">Posh App</span>
+          <span class="party-tag">Posh App</span>
         </div>
       </div>
 
