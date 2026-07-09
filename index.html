@@ -81,7 +81,10 @@
     font-weight:500;
     font-size:.95rem;
     letter-spacing:.01em;
+    text-decoration:none;
+    transition:background .15s;
   }
+  .homebase:hover, .homebase:focus-visible{ background:var(--ocean); }
   .homebase .dot{ width:7px;height:7px;border-radius:50%;background:var(--coral); flex-shrink:0; }
 
   /* QUICK NAV */
@@ -212,6 +215,17 @@
     margin-bottom:.3rem;
   }
   .eatshop b{ color:var(--navy); font-weight:600; }
+  .eatshop a{
+    color:var(--navy);
+    text-decoration:underline;
+    text-decoration-color:var(--line);
+    text-underline-offset:2px;
+    transition:color .15s, text-decoration-color .15s;
+  }
+  .eatshop a:hover, .eatshop a:focus-visible{
+    color:var(--ocean);
+    text-decoration-color:var(--ocean);
+  }
 
   /* TODO */
   section.todo{
@@ -269,7 +283,7 @@
   <div class="wave-row">🌊 🐎 ⛵ 🍂 🧭</div>
   <h1>Martha's <span>Vineyard</span></h1>
   <div class="subtitle">Vacation Cheat Sheet</div>
-  <div class="homebase"><span class="dot"></span>HOME BASE — 100 Whaler's Walk, Edgartown, MA 02539</div>
+  <a class="homebase" href="https://www.google.com/maps/search/?api=1&query=100%20Whaler%27s%20Walk%2C%20Edgartown%2C%20MA%2002539" target="_blank" rel="noopener"><span class="dot"></span>HOME BASE — 100 Whaler's Walk, Edgartown, MA 02539</a>
 </header>
 
 <nav class="quicknav" aria-label="Jump to town">
@@ -295,10 +309,10 @@
         <hr class="divider">
         <div class="eatshop">
           <span class="label">Eat</span>
-          Ocean Club · 9 Craft Kitchen &amp; Bar · The Attic · Catboat Coffee · Black Dog · Art Cliff Diner
+          <a href="https://www.google.com/maps/search/?api=1&query=Ocean%20Club%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Ocean Club</a> · <a href="https://www.google.com/maps/search/?api=1&query=9%20Craft%20Kitchen%20%26%20Bar%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">9 Craft Kitchen &amp; Bar</a> · <a href="https://www.google.com/maps/search/?api=1&query=The%20Attic%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Attic</a> · <a href="https://www.google.com/maps/search/?api=1&query=Catboat%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Catboat Coffee</a> · <a href="https://www.google.com/maps/search/?api=1&query=Black%20Dog%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Black Dog</a> · <a href="https://www.google.com/maps/search/?api=1&query=Art%20Cliff%20Diner%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Art Cliff Diner</a>
           <br><br>
           <span class="label">Shop</span>
-          India Rose Collective <b>(BO)</b> · Bee Blunt <b>(BO)</b>
+          <a href="https://www.google.com/maps/search/?api=1&query=India%20Rose%20Collective%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">India Rose Collective</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Bee%20Blunt%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Bee Blunt</a> <b>(BO)</b>
         </div>
       </div>
     </div>
@@ -311,10 +325,10 @@
         <hr class="divider">
         <div class="eatshop">
           <span class="label">Eat</span>
-          Black Joy Kitchen <b>(BO)</b> · Biscuits <b>(BO)</b> · Winston's · Vineyard Caribbean Cuisine <b>(BO)</b> · Honorary Tavern <b>(BO)</b> · Donovan's Reef <b>(BO)</b> · Back Door Donuts · Midnight Taco · Lookout Tavern · Mocha Motts · Dos Mas · Nancy's · Aalia's Coffee · The Ritz · Noman's
+          <a href="https://www.google.com/maps/search/?api=1&query=Black%20Joy%20Kitchen%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Black Joy Kitchen</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Biscuits%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Biscuits</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Winston%27s%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Winston's</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vineyard%20Caribbean%20Cuisine%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Vineyard Caribbean Cuisine</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Honorary%20Tavern%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Honorary Tavern</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Donovan%27s%20Reef%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Donovan's Reef</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Back%20Door%20Donuts%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Back Door Donuts</a> · <a href="https://www.google.com/maps/search/?api=1&query=Midnight%20Taco%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Midnight Taco</a> · <a href="https://www.google.com/maps/search/?api=1&query=Lookout%20Tavern%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Lookout Tavern</a> · <a href="https://www.google.com/maps/search/?api=1&query=Mocha%20Motts%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Mocha Motts</a> · <a href="https://www.google.com/maps/search/?api=1&query=Dos%20Mas%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Dos Mas</a> · <a href="https://www.google.com/maps/search/?api=1&query=Nancy%27s%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Nancy's</a> · <a href="https://www.google.com/maps/search/?api=1&query=Aalia%27s%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Aalia's Coffee</a> · <a href="https://www.google.com/maps/search/?api=1&query=The%20Ritz%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Ritz</a> · <a href="https://www.google.com/maps/search/?api=1&query=Noman%27s%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Noman's</a>
           <br><br>
           <span class="label">Shop</span>
-          C'est La Vie <b>(BO)</b> · Island-Life Studio <b>(BO)</b> · Cousen Rose Gallery <b>(BO)</b>
+          <a href="https://www.google.com/maps/search/?api=1&query=C%27est%20La%20Vie%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">C'est La Vie</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Island-Life%20Studio%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Island-Life Studio</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Cousen%20Rose%20Gallery%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Cousen Rose Gallery</a> <b>(BO)</b>
         </div>
       </div>
     </div>
@@ -327,10 +341,10 @@
         <hr class="divider">
         <div class="eatshop">
           <span class="label">Eat</span>
-          Atlantic Fish &amp; Chop House · Bettini · Rockfish · Sweet Life Café · Behind the Bookstore · Rosewater · Atria · 19 Raw · Pelican Club · Seafood Shanty · Edgartown Diner · Toccopuro Coffee · Summer Shades
+          <a href="https://www.google.com/maps/search/?api=1&query=Atlantic%20Fish%20%26%20Chop%20House%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Atlantic Fish &amp; Chop House</a> · <a href="https://www.google.com/maps/search/?api=1&query=Bettini%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Bettini</a> · <a href="https://www.google.com/maps/search/?api=1&query=Rockfish%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Rockfish</a> · <a href="https://www.google.com/maps/search/?api=1&query=Sweet%20Life%20Caf%C3%A9%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Sweet Life Café</a> · <a href="https://www.google.com/maps/search/?api=1&query=Behind%20the%20Bookstore%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Behind the Bookstore</a> · <a href="https://www.google.com/maps/search/?api=1&query=Rosewater%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Rosewater</a> · <a href="https://www.google.com/maps/search/?api=1&query=Atria%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Atria</a> · <a href="https://www.google.com/maps/search/?api=1&query=19%20Raw%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">19 Raw</a> · <a href="https://www.google.com/maps/search/?api=1&query=Pelican%20Club%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Pelican Club</a> · <a href="https://www.google.com/maps/search/?api=1&query=Seafood%20Shanty%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Seafood Shanty</a> · <a href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Diner%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Edgartown Diner</a> · <a href="https://www.google.com/maps/search/?api=1&query=Toccopuro%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Toccopuro Coffee</a> · <a href="https://www.google.com/maps/search/?api=1&query=Summer%20Shades%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Summer Shades</a>
           <br><br>
           <span class="label">Shop</span>
-          Edgartown Books · The Blackdog
+          <a href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Books%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Edgartown Books</a> · <a href="https://www.google.com/maps/search/?api=1&query=The%20Blackdog%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Blackdog</a>
         </div>
       </div>
     </div>
@@ -351,7 +365,7 @@
         <hr class="divider">
         <div class="eatshop">
           <span class="label">Eat</span>
-          Larsen's Fish Market · Homeport Restaurant &amp; Oyster Bar
+          <a href="https://www.google.com/maps/search/?api=1&query=Larsen%27s%20Fish%20Market%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Larsen's Fish Market</a> · <a href="https://www.google.com/maps/search/?api=1&query=Homeport%20Restaurant%20%26%20Oyster%20Bar%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Homeport Restaurant &amp; Oyster Bar</a>
         </div>
       </div>
     </div>
@@ -364,7 +378,7 @@
         <hr class="divider">
         <div class="eatshop">
           <span class="label">Eat / Stay</span>
-          The Outermost Inn · Orange Peel Bakery
+          <a href="https://www.google.com/maps/search/?api=1&query=The%20Outermost%20Inn%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Outermost Inn</a> · <a href="https://www.google.com/maps/search/?api=1&query=Orange%20Peel%20Bakery%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Orange Peel Bakery</a>
         </div>
       </div>
     </div>
