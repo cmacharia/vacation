@@ -1,404 +1,1117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Martha's Vineyard — Vacation Cheat Sheet</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#16324A;
-    --ocean:#3F7CA0;
-    --teal:#6B9E97;
-    --sand:#F4EEDD;
-    --card:#FFFDF8;
-    --coral:#E8834F;
-    --gold:#E0AC42;
-    --line:#D8CFB8;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--sand);
-    color:var(--navy);
-    font-family:'Work Sans',sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Fraunces',serif;
-    margin:0;
-  }
-  .eyebrow{
-    font-family:'Work Sans',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:.12em;
-    font-size:.72rem;
-    color:var(--ocean);
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Martha's Vineyard — Vacation Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #16324a;
+        --ocean: #3f7ca0;
+        --teal: #6b9e97;
+        --sand: #f4eedd;
+        --card: #fffdf8;
+        --coral: #e8834f;
+        --gold: #e0ac42;
+        --line: #d8cfb8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--sand);
+        color: var(--navy);
+        font-family: "Work Sans", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        margin: 0;
+      }
+      .eyebrow {
+        font-family: "Work Sans", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.72rem;
+        color: var(--ocean);
+      }
 
-  /* HERO */
-  header.hero{
-    position:relative;
-    padding:3.2rem 1.5rem 2.4rem;
-    text-align:center;
-    background:
-      radial-gradient(ellipse at top, rgba(63,124,160,0.12), transparent 60%),
-      var(--sand);
-    border-bottom:1px solid var(--line);
-    overflow:hidden;
-  }
-  .wave-row{
-    display:flex; justify-content:center; gap:.4rem; margin-bottom:.8rem;
-    font-size:1.3rem; opacity:.8;
-  }
-  header.hero h1{
-    font-size:clamp(2.3rem, 6vw, 3.6rem);
-    font-weight:600;
-    line-height:1.02;
-    color:var(--navy);
-  }
-  header.hero h1 span{ color:var(--coral); font-style:italic; font-weight:500;}
-  .subtitle{
-    margin-top:.6rem;
-    font-size:1.05rem;
-    color:#4A5A63;
-    font-weight:500;
-  }
-  .homebase{
-    display:inline-flex;
-    align-items:center;
-    gap:.55rem;
-    margin-top:1.4rem;
-    background:var(--navy);
-    color:var(--sand);
-    padding:.65rem 1.2rem;
-    border-radius:999px;
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:.95rem;
-    letter-spacing:.01em;
-    text-decoration:none;
-    transition:background .15s;
-  }
-  .homebase:hover, .homebase:focus-visible{ background:var(--ocean); }
-  .homebase .dot{ width:7px;height:7px;border-radius:50%;background:var(--coral); flex-shrink:0; }
+      /* HERO */
+      header.hero {
+        position: relative;
+        padding: 3.2rem 1.5rem 2.4rem;
+        text-align: center;
+        background:
+          radial-gradient(
+            ellipse at top,
+            rgba(63, 124, 160, 0.12),
+            transparent 60%
+          ),
+          var(--sand);
+        border-bottom: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .wave-row {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.3rem;
+        opacity: 0.8;
+      }
+      header.hero h1 {
+        font-size: clamp(2.3rem, 6vw, 3.6rem);
+        font-weight: 600;
+        line-height: 1.02;
+        color: var(--navy);
+      }
+      header.hero h1 span {
+        color: var(--coral);
+        font-style: italic;
+        font-weight: 500;
+      }
+      .subtitle {
+        margin-top: 0.6rem;
+        font-size: 1.05rem;
+        color: #4a5a63;
+        font-weight: 500;
+      }
+      .homebase {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin-top: 1.4rem;
+        background: var(--navy);
+        color: var(--sand);
+        padding: 0.65rem 1.2rem;
+        border-radius: 999px;
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        transition: background 0.15s;
+      }
+      .homebase:hover,
+      .homebase:focus-visible {
+        background: var(--ocean);
+      }
+      .homebase .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--coral);
+        flex-shrink: 0;
+      }
 
-  /* QUICK NAV */
-  nav.quicknav{
-    position:sticky; top:0; z-index:50;
-    display:flex; gap:.5rem;
-    overflow-x:auto;
-    padding:.7rem 1rem;
-    background:rgba(244,238,221,0.92);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-    scrollbar-width:none;
-  }
-  nav.quicknav::-webkit-scrollbar{display:none;}
-  nav.quicknav a{
-    flex:0 0 auto;
-    text-decoration:none;
-    font-family:'Work Sans',sans-serif;
-    font-size:.75rem;
-    letter-spacing:.03em;
-    color:var(--navy);
-    border:1px solid var(--line);
-    background:var(--card);
-    padding:.45rem .9rem;
-    border-radius:999px;
-    white-space:nowrap;
-    transition:background .15s, color .15s, border-color .15s;
-  }
-  nav.quicknav a:hover, nav.quicknav a:focus-visible{
-    background:var(--navy); color:var(--sand); border-color:var(--navy);
-  }
-  @media (min-width:700px){
-    nav.quicknav{ justify-content:center; }
-  }
+      /* QUICK NAV */
+      nav.quicknav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding: 0.7rem 1rem;
+        background: rgba(244, 238, 221, 0.92);
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--line);
+        scrollbar-width: none;
+      }
+      nav.quicknav::-webkit-scrollbar {
+        display: none;
+      }
+      nav.quicknav a {
+        flex: 0 0 auto;
+        text-decoration: none;
+        font-family: "Work Sans", sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.03em;
+        color: var(--navy);
+        border: 1px solid var(--line);
+        background: var(--card);
+        padding: 0.45rem 0.9rem;
+        border-radius: 999px;
+        white-space: nowrap;
+        transition:
+          background 0.15s,
+          color 0.15s,
+          border-color 0.15s;
+      }
+      nav.quicknav a:hover,
+      nav.quicknav a:focus-visible {
+        background: var(--navy);
+        color: var(--sand);
+        border-color: var(--navy);
+      }
+      @media (min-width: 700px) {
+        nav.quicknav {
+          justify-content: center;
+        }
+      }
 
-  /* ROUTE / MAIN */
-  main{
-    max-width:900px;
-    margin:0 auto;
-    padding:2.6rem 1.3rem 1rem;
-    position:relative;
-  }
-  .route-caption{
-    text-align:center;
-    max-width:520px;
-    margin:0 auto 2.6rem;
-    color:#4A5A63;
-    font-size:.95rem;
-  }
-  .route-caption strong{ color:var(--navy); }
+      /* ROUTE / MAIN */
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2.6rem 1.3rem 1rem;
+        position: relative;
+      }
+      .route-caption {
+        text-align: center;
+        max-width: 520px;
+        margin: 0 auto 2.6rem;
+        color: #4a5a63;
+        font-size: 0.95rem;
+      }
+      .route-caption strong {
+        color: var(--navy);
+      }
 
-  .route{
-    position:relative;
-    padding-left:2.4rem;
-  }
-  .route::before{
-    content:"";
-    position:absolute;
-    left:11px; top:8px; bottom:8px;
-    width:2px;
-    background-image:linear-gradient(var(--ocean) 60%, transparent 0%);
-    background-size:2px 12px;
-    background-repeat:repeat-y;
-  }
+      .route {
+        position: relative;
+        padding-left: 2.4rem;
+      }
+      .route::before {
+        content: "";
+        position: absolute;
+        left: 11px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background-image: linear-gradient(var(--ocean) 60%, transparent 0%);
+        background-size: 2px 12px;
+        background-repeat: repeat-y;
+      }
 
-  .stop{
-    position:relative;
-    margin-bottom:2.1rem;
-  }
-  .stop-marker{
-    position:absolute;
-    left:-2.4rem;
-    top:.35rem;
-    width:24px; height:24px;
-    border-radius:50%;
-    background:var(--card);
-    border:2px solid var(--ocean);
-    display:flex; align-items:center; justify-content:center;
-    font-size:.85rem;
-  }
-  .stop.home .stop-marker{ border-color:var(--coral); background:var(--coral); }
-  .stop.sunset .stop-marker{ border-color:var(--gold); }
+      .stop {
+        position: relative;
+        margin-bottom: 2.1rem;
+      }
+      .stop-marker {
+        position: absolute;
+        left: -2.4rem;
+        top: 0.35rem;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--card);
+        border: 2px solid var(--ocean);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+      }
+      .stop.home .stop-marker {
+        border-color: var(--coral);
+        background: var(--coral);
+      }
+      .stop.sunset .stop-marker {
+        border-color: var(--gold);
+      }
 
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:1.3rem 1.4rem 1.4rem;
-    box-shadow:0 1px 0 rgba(22,50,74,0.03);
-  }
-  .card-head{
-    display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap;
-    margin-bottom:.15rem;
-  }
-  .card-head .icon{ font-size:1.3rem; }
-  .card-head h3{ font-size:1.4rem; font-weight:600; color:var(--navy); }
-  .card-head .tag{
-    font-family:'Work Sans',sans-serif;
-    font-size:.68rem;
-    letter-spacing:.05em;
-    text-transform:uppercase;
-    color:var(--coral);
-    border:1px solid var(--coral);
-    border-radius:999px;
-    padding:.12rem .55rem;
-    margin-left:.1rem;
-  }
-  .vibe{
-    color:#3D4C55;
-    font-size:.98rem;
-    line-height:1.55;
-    margin:.5rem 0 .9rem;
-  }
-  .divider{
-    border:none;
-    border-top:1px dashed var(--line);
-    margin:.9rem 0;
-  }
-  .eatshop{ font-size:.92rem; line-height:1.6; color:#3D4C55; }
-  .eatshop .label{
-    font-family:'Fraunces',serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:.92rem;
-    letter-spacing:.01em;
-    color:var(--teal);
-    display:block;
-    margin-bottom:.3rem;
-  }
-  .eatshop b{ color:var(--navy); font-weight:600; }
-  .eatshop a{
-    color:var(--navy);
-    text-decoration:underline;
-    text-decoration-color:var(--line);
-    text-underline-offset:2px;
-    transition:color .15s, text-decoration-color .15s;
-  }
-  .eatshop a:hover, .eatshop a:focus-visible{
-    color:var(--ocean);
-    text-decoration-color:var(--ocean);
-  }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 1.3rem 1.4rem 1.4rem;
+        box-shadow: 0 1px 0 rgba(22, 50, 74, 0.03);
+      }
+      .card-head {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.15rem;
+      }
+      .card-head .icon {
+        font-size: 1.3rem;
+      }
+      .card-head h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .card-head .tag {
+        font-family: "Work Sans", sans-serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--coral);
+        border: 1px solid var(--coral);
+        border-radius: 999px;
+        padding: 0.12rem 0.55rem;
+        margin-left: 0.1rem;
+      }
+      .vibe {
+        color: #3d4c55;
+        font-size: 0.98rem;
+        line-height: 1.55;
+        margin: 0.5rem 0 0.9rem;
+      }
+      .divider {
+        border: none;
+        border-top: 1px dashed var(--line);
+        margin: 0.9rem 0;
+      }
+      .eatshop {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: #3d4c55;
+      }
+      .eatshop .label {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 0.92rem;
+        letter-spacing: 0.01em;
+        color: var(--teal);
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      .eatshop b {
+        color: var(--navy);
+        font-weight: 600;
+      }
+      .eatshop a {
+        color: var(--navy);
+        text-decoration: underline;
+        text-decoration-color: var(--line);
+        text-underline-offset: 2px;
+        transition:
+          color 0.15s,
+          text-decoration-color 0.15s;
+      }
+      .eatshop a:hover,
+      .eatshop a:focus-visible {
+        color: var(--ocean);
+        text-decoration-color: var(--ocean);
+      }
 
-  /* TODO */
-  section.todo{
-    max-width:900px;
-    margin:1.5rem auto 3rem;
-    padding:0 1.3rem;
-  }
-  .todo-card{
-    background:var(--navy);
-    color:var(--sand);
-    border-radius:18px;
-    padding:1.8rem 1.6rem 1.6rem;
-  }
-  .todo-card h2{
-    font-size:1.5rem;
-    font-weight:600;
-    color:var(--sand);
-    margin-bottom:1.1rem;
-  }
-  .todo-list{ list-style:none; margin:0; padding:0; display:grid; gap:.85rem; }
-  .todo-list li{
-    display:flex; gap:.75rem; align-items:flex-start;
-    font-size:.95rem; line-height:1.5;
-  }
-  .todo-list .ticon{
-    font-size:1.15rem; flex-shrink:0; margin-top:.05rem;
-  }
-  .todo-list b{ color:#fff; }
-  .todo-list span.sub{ color:#C9D6DC; }
+      /* TODO */
+      section.todo {
+        max-width: 900px;
+        margin: 1.5rem auto 3rem;
+        padding: 0 1.3rem;
+      }
+      .todo-card {
+        background: var(--navy);
+        color: var(--sand);
+        border-radius: 18px;
+        padding: 1.8rem 1.6rem 1.6rem;
+      }
+      .todo-card h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--sand);
+        margin-bottom: 1.1rem;
+      }
+      .todo-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.85rem;
+      }
+      .todo-list li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      .todo-list .ticon {
+        font-size: 1.15rem;
+        flex-shrink: 0;
+        margin-top: 0.05rem;
+      }
+      .todo-list b {
+        color: #fff;
+      }
+      .todo-list span.sub {
+        color: #c9d6dc;
+      }
 
-  footer{
-    text-align:center;
-    padding:1.6rem 1rem 2.4rem;
-    font-family:'Work Sans',sans-serif;
-    font-size:.72rem;
-    letter-spacing:.04em;
-    color:#8B9A94;
-  }
+      footer {
+        text-align: center;
+        padding: 1.6rem 1rem 2.4rem;
+        font-family: "Work Sans", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        color: #8b9a94;
+      }
 
-  @media (max-width:520px){
-    .route{ padding-left:2rem; }
-    .stop-marker{ left:-2rem; width:20px; height:20px; font-size:.75rem; }
-    .card{ padding:1.1rem 1.05rem 1.2rem; }
-    .card-head h3{ font-size:1.22rem; }
-  }
+      @media (max-width: 520px) {
+        .route {
+          padding-left: 2rem;
+        }
+        .stop-marker {
+          left: -2rem;
+          width: 20px;
+          height: 20px;
+          font-size: 0.75rem;
+        }
+        .card {
+          padding: 1.1rem 1.05rem 1.2rem;
+        }
+        .card-head h3 {
+          font-size: 1.22rem;
+        }
+      }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-  }
-</style>
-</head>
-<body>
+      /* NIGHTLIFE & PARTIES */
+      section.parties {
+        max-width: 900px;
+        margin: 0 auto 1rem;
+        padding: 0 1.3rem;
+      }
+      .parties-head {
+        text-align: center;
+        margin-bottom: 1.8rem;
+      }
+      .parties-head h2 {
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: var(--navy);
+      }
+      .parties-sub {
+        margin-top: 0.4rem;
+        font-size: 0.88rem;
+        color: #6b7a82;
+      }
+      .party-day {
+        margin-bottom: 1.6rem;
+      }
+      .party-date {
+        font-size: 1.05rem;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--coral);
+        margin-bottom: 0.7rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px dashed var(--line);
+      }
+      .party-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--coral);
+        border-radius: 10px;
+        padding: 0.85rem 1rem;
+        margin-bottom: 0.6rem;
+      }
+      .party-row {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+      .party-time {
+        font-size: 0.72rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--teal);
+        font-weight: 600;
+      }
+      .party-name {
+        font-size: 0.95rem;
+        color: #3d4c55;
+      }
+      .party-name a {
+        color: var(--navy);
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-color: var(--line);
+        text-underline-offset: 2px;
+      }
+      .party-name a:hover,
+      .party-name a:focus-visible {
+        color: var(--coral);
+        text-decoration-color: var(--coral);
+      }
+      .party-tag {
+        flex: 0 0 auto;
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--coral);
+        border: 1px solid var(--coral);
+        border-radius: 999px;
+        padding: 0.25rem 0.65rem;
+        white-space: nowrap;
+      }
+      .party-tag.muted {
+        color: #9aa6ab;
+        border-color: var(--line);
+      }
+      @media (max-width: 520px) {
+        .party-card {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
 
-<header class="hero">
-  <div class="wave-row">🌊 🐎 ⛵ 🍂 🧭</div>
-  <h1>Martha's <span>Vineyard</span></h1>
-  <div class="subtitle">Vacation Cheat Sheet</div>
-  <a class="homebase" href="https://www.google.com/maps/search/?api=1&query=100%20Whaler%27s%20Walk%2C%20Edgartown%2C%20MA%2002539" target="_blank" rel="noopener"><span class="dot"></span>HOME BASE — 100 Whaler's Walk, Edgartown, MA 02539</a>
-</header>
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wave-row">🌊 🐎 ⛵ 🍂 🧭</div>
+      <h1>Martha's <span>Vineyard</span></h1>
+      <div class="subtitle">Vacation Cheat Sheet</div>
+      <a
+        class="homebase"
+        href="https://www.google.com/maps/search/?api=1&query=100%20Whaler%27s%20Walk%2C%20Edgartown%2C%20MA%2002539"
+        target="_blank"
+        rel="noopener"
+        ><span class="dot"></span>HOME BASE — 100 Whaler's Walk, Edgartown, MA
+        02539</a
+      >
+    </header>
 
-<nav class="quicknav" aria-label="Jump to town">
-  <a href="#vineyardhaven">⛴️ Vineyard Haven</a>
-  <a href="#oakbluffs">🎠 Oak Bluffs</a>
-  <a href="#edgartown">🎡 Edgartown</a>
-  <a href="#westtisbury">🌿 West Tisbury</a>
-  <a href="#chilmark">🌅 Chilmark</a>
-  <a href="#aquinnah">❤️ Aquinnah</a>
-  <a href="#todo">🧭 To-Do</a>
-</nav>
+    <nav class="quicknav" aria-label="Jump to town">
+      <a href="#vineyardhaven">⛴️ Vineyard Haven</a>
+      <a href="#oakbluffs">🎠 Oak Bluffs</a>
+      <a href="#edgartown">🎡 Edgartown</a>
+      <a href="#westtisbury">🌿 West Tisbury</a>
+      <a href="#chilmark">🌅 Chilmark</a>
+      <a href="#aquinnah">❤️ Aquinnah</a>
+      <a href="#parties">🎉 Parties</a>
+      <a href="#todo">🧭 To-Do</a>
+    </nav>
 
-<main>
-  <p class="route-caption">Towns run <strong>east to west</strong> across the island — ferry in at Vineyard Haven, home base in Edgartown, sunset out at Aquinnah.</p>
+    <main>
+      <p class="route-caption">
+        Towns run <strong>east to west</strong> across the island — ferry in at
+        Vineyard Haven, home base in Edgartown, sunset out at Aquinnah.
+      </p>
 
-  <div class="route">
+      <div class="route">
+        <div class="stop" id="vineyardhaven">
+          <div class="stop-marker">⛴️</div>
+          <div class="card">
+            <div class="card-head">
+              <span class="icon">⛴️</span>
+              <h3>Vineyard Haven</h3>
+            </div>
+            <p class="vibe">
+              Boutique shopping plus the Martha's Vineyard Museum. Usually the
+              first stop off the ferry.
+            </p>
+            <hr class="divider" />
+            <div class="eatshop">
+              <span class="label">Eat</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ocean%20Club%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Ocean Club</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=9%20Craft%20Kitchen%20%26%20Bar%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >9 Craft Kitchen &amp; Bar</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=The%20Attic%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >The Attic</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Catboat%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Catboat Coffee</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Black%20Dog%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Black Dog</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Art%20Cliff%20Diner%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Art Cliff Diner</a
+              >
+              <br /><br />
+              <span class="label">Shop</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=India%20Rose%20Collective%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >India Rose Collective</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bee%20Blunt%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Bee Blunt</a
+              >
+              <b>(BO)</b>
+            </div>
+          </div>
+        </div>
 
-    <div class="stop" id="vineyardhaven">
-      <div class="stop-marker">⛴️</div>
-      <div class="card">
-        <div class="card-head"><span class="icon">⛴️</span><h3>Vineyard Haven</h3></div>
-        <p class="vibe">Boutique shopping plus the Martha's Vineyard Museum. Usually the first stop off the ferry.</p>
-        <hr class="divider">
-        <div class="eatshop">
-          <span class="label">Eat</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=Ocean%20Club%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Ocean Club</a> · <a href="https://www.google.com/maps/search/?api=1&query=9%20Craft%20Kitchen%20%26%20Bar%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">9 Craft Kitchen &amp; Bar</a> · <a href="https://www.google.com/maps/search/?api=1&query=The%20Attic%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Attic</a> · <a href="https://www.google.com/maps/search/?api=1&query=Catboat%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Catboat Coffee</a> · <a href="https://www.google.com/maps/search/?api=1&query=Black%20Dog%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Black Dog</a> · <a href="https://www.google.com/maps/search/?api=1&query=Art%20Cliff%20Diner%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Art Cliff Diner</a>
-          <br><br>
-          <span class="label">Shop</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=India%20Rose%20Collective%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">India Rose Collective</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Bee%20Blunt%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Bee Blunt</a> <b>(BO)</b>
+        <div class="stop" id="oakbluffs">
+          <div class="stop-marker">🎠</div>
+          <div class="card">
+            <div class="card-head">
+              <span class="icon">🎠</span>
+              <h3>Oak Bluffs</h3>
+              <span class="tag">sunrise</span>
+            </div>
+            <p class="vibe">
+              Lively and colorful — MVAAFF, Gingerbread Cottages, Circuit Ave,
+              Inkwell Beach, Flying Horses Carousel.
+            </p>
+            <hr class="divider" />
+            <div class="eatshop">
+              <span class="label">Eat</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Black%20Joy%20Kitchen%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Black Joy Kitchen</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Biscuits%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Biscuits</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Winston%27s%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Winston's</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Vineyard%20Caribbean%20Cuisine%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Vineyard Caribbean Cuisine</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Honorary%20Tavern%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Honorary Tavern</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Donovan%27s%20Reef%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Donovan's Reef</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Back%20Door%20Donuts%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Back Door Donuts</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Midnight%20Taco%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Midnight Taco</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Lookout%20Tavern%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Lookout Tavern</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Mocha%20Motts%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Mocha Motts</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Dos%20Mas%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Dos Mas</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Nancy%27s%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Nancy's</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Aalia%27s%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Aalia's Coffee</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=The%20Ritz%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >The Ritz</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Noman%27s%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Noman's</a
+              >
+              <br /><br />
+              <span class="label">Shop</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=C%27est%20La%20Vie%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >C'est La Vie</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Island-Life%20Studio%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Island-Life Studio</a
+              >
+              <b>(BO)</b> ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Cousen%20Rose%20Gallery%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Cousen Rose Gallery</a
+              >
+              <b>(BO)</b>
+            </div>
+          </div>
+        </div>
+
+        <div class="stop home" id="edgartown">
+          <div class="stop-marker">🏠</div>
+          <div class="card">
+            <div class="card-head">
+              <span class="icon">🎡</span>
+              <h3>Edgartown</h3>
+              <span class="tag">home base · sunrise</span>
+            </div>
+            <p class="vibe">
+              Charming streets, boutiques, lighthouses, and classic coastal
+              vibes.
+            </p>
+            <hr class="divider" />
+            <div class="eatshop">
+              <span class="label">Eat</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Atlantic%20Fish%20%26%20Chop%20House%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Atlantic Fish &amp; Chop House</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Bettini%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Bettini</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Rockfish%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Rockfish</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Sweet%20Life%20Caf%C3%A9%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Sweet Life Café</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Behind%20the%20Bookstore%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Behind the Bookstore</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Rosewater%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Rosewater</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Atria%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Atria</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=19%20Raw%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >19 Raw</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Pelican%20Club%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Pelican Club</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Seafood%20Shanty%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Seafood Shanty</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Diner%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Edgartown Diner</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Toccopuro%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Toccopuro Coffee</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Summer%20Shades%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Summer Shades</a
+              >
+              <br /><br />
+              <span class="label">Shop</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Books%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Edgartown Books</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=The%20Blackdog%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >The Blackdog</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="stop" id="westtisbury">
+          <div class="stop-marker">🌿</div>
+          <div class="card">
+            <div class="card-head">
+              <span class="icon">🌿</span>
+              <h3>West Tisbury</h3>
+            </div>
+            <p class="vibe">
+              Peaceful farms, nature preserves, and Lambert's Cove Beach — great
+              for a slower, scenic stop.
+            </p>
+          </div>
+        </div>
+
+        <div class="stop sunset" id="chilmark">
+          <div class="stop-marker">🌅</div>
+          <div class="card">
+            <div class="card-head">
+              <span class="icon">🌅</span>
+              <h3>Chilmark</h3>
+              <span class="tag">sunset</span>
+            </div>
+            <p class="vibe">
+              Quiet, scenic, and coastal, with Menemsha fishing village views.
+            </p>
+            <hr class="divider" />
+            <div class="eatshop">
+              <span class="label">Eat</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Larsen%27s%20Fish%20Market%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Larsen's Fish Market</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Homeport%20Restaurant%20%26%20Oyster%20Bar%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Homeport Restaurant &amp; Oyster Bar</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="stop sunset" id="aquinnah">
+          <div class="stop-marker">❤️</div>
+          <div class="card">
+            <div class="card-head">
+              <span class="icon">❤️</span>
+              <h3>Aquinnah</h3>
+              <span class="tag">sunset</span>
+            </div>
+            <p class="vibe">
+              Indigenous roots, Gay Head Light, and the stunning Aquinnah Clay
+              Cliffs.
+            </p>
+            <hr class="divider" />
+            <div class="eatshop">
+              <span class="label">Eat / Stay</span>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=The%20Outermost%20Inn%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >The Outermost Inn</a
+              >
+              ·
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Orange%20Peel%20Bakery%2C%20Martha%27s%20Vineyard%2C%20MA"
+                target="_blank"
+                rel="noopener"
+                >Orange Peel Bakery</a
+              >
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="stop" id="oakbluffs">
-      <div class="stop-marker">🎠</div>
-      <div class="card">
-        <div class="card-head"><span class="icon">🎠</span><h3>Oak Bluffs</h3><span class="tag">sunrise</span></div>
-        <p class="vibe">Lively and colorful — MVAAFF, Gingerbread Cottages, Circuit Ave, Inkwell Beach, Flying Horses Carousel.</p>
-        <hr class="divider">
-        <div class="eatshop">
-          <span class="label">Eat</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=Black%20Joy%20Kitchen%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Black Joy Kitchen</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Biscuits%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Biscuits</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Winston%27s%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Winston's</a> · <a href="https://www.google.com/maps/search/?api=1&query=Vineyard%20Caribbean%20Cuisine%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Vineyard Caribbean Cuisine</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Honorary%20Tavern%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Honorary Tavern</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Donovan%27s%20Reef%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Donovan's Reef</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Back%20Door%20Donuts%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Back Door Donuts</a> · <a href="https://www.google.com/maps/search/?api=1&query=Midnight%20Taco%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Midnight Taco</a> · <a href="https://www.google.com/maps/search/?api=1&query=Lookout%20Tavern%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Lookout Tavern</a> · <a href="https://www.google.com/maps/search/?api=1&query=Mocha%20Motts%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Mocha Motts</a> · <a href="https://www.google.com/maps/search/?api=1&query=Dos%20Mas%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Dos Mas</a> · <a href="https://www.google.com/maps/search/?api=1&query=Nancy%27s%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Nancy's</a> · <a href="https://www.google.com/maps/search/?api=1&query=Aalia%27s%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Aalia's Coffee</a> · <a href="https://www.google.com/maps/search/?api=1&query=The%20Ritz%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Ritz</a> · <a href="https://www.google.com/maps/search/?api=1&query=Noman%27s%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Noman's</a>
-          <br><br>
-          <span class="label">Shop</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=C%27est%20La%20Vie%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">C'est La Vie</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Island-Life%20Studio%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Island-Life Studio</a> <b>(BO)</b> · <a href="https://www.google.com/maps/search/?api=1&query=Cousen%20Rose%20Gallery%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Cousen Rose Gallery</a> <b>(BO)</b>
+    <section class="parties" id="parties">
+      <div class="parties-head">
+        <h2>🎉 Nightlife &amp; Parties</h2>
+        <p class="parties-sub">
+          MVAAFF week, Aug 6–10, 2026 · linked where tickets are live, otherwise
+          check the Posh app closer to the date.
+        </p>
+      </div>
+
+      <div class="party-day">
+        <h3 class="party-date">Thursday, Aug 6</h3>
+
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">9:30PM–12:45AM</span>
+            <span class="party-name"
+              ><a
+                href="https://www.eventbrite.com/e/jamaica-independence-party-tickets-1992533541460"
+                target="_blank"
+                rel="noopener"
+                >Party/Food — 11 Circuit Restaurant &amp; Bar</a
+              ></span
+            >
+          </div>
+          <span class="party-tag">Eventbrite</span>
+        </div>
+
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">Evening</span>
+            <span class="party-name"
+              ><a
+                href="https://www.mvaaff.com/tickets/"
+                target="_blank"
+                rel="noopener"
+                >MVAAFF Summer White Party</a
+              >
+              — Island Inn Conference Center, 30 Island Inn Road, Oak
+              Bluffs</span
+            >
+          </div>
+          <span class="party-tag">MVAAFF Tickets</span>
+        </div>
+
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">After Party</span>
+            <span class="party-name"
+              ><a
+                href="https://www.mvaaff.com/tickets/"
+                target="_blank"
+                rel="noopener"
+                >Summer White After Party</a
+              >
+              — 11 Circuit Ave, Oak Bluffs</span
+            >
+          </div>
+          <span class="party-tag">MVAAFF Tickets</span>
         </div>
       </div>
-    </div>
 
-    <div class="stop home" id="edgartown">
-      <div class="stop-marker">🏠</div>
-      <div class="card">
-        <div class="card-head"><span class="icon">🎡</span><h3>Edgartown</h3><span class="tag">home base · sunrise</span></div>
-        <p class="vibe">Charming streets, boutiques, lighthouses, and classic coastal vibes.</p>
-        <hr class="divider">
-        <div class="eatshop">
-          <span class="label">Eat</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=Atlantic%20Fish%20%26%20Chop%20House%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Atlantic Fish &amp; Chop House</a> · <a href="https://www.google.com/maps/search/?api=1&query=Bettini%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Bettini</a> · <a href="https://www.google.com/maps/search/?api=1&query=Rockfish%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Rockfish</a> · <a href="https://www.google.com/maps/search/?api=1&query=Sweet%20Life%20Caf%C3%A9%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Sweet Life Café</a> · <a href="https://www.google.com/maps/search/?api=1&query=Behind%20the%20Bookstore%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Behind the Bookstore</a> · <a href="https://www.google.com/maps/search/?api=1&query=Rosewater%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Rosewater</a> · <a href="https://www.google.com/maps/search/?api=1&query=Atria%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Atria</a> · <a href="https://www.google.com/maps/search/?api=1&query=19%20Raw%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">19 Raw</a> · <a href="https://www.google.com/maps/search/?api=1&query=Pelican%20Club%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Pelican Club</a> · <a href="https://www.google.com/maps/search/?api=1&query=Seafood%20Shanty%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Seafood Shanty</a> · <a href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Diner%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Edgartown Diner</a> · <a href="https://www.google.com/maps/search/?api=1&query=Toccopuro%20Coffee%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Toccopuro Coffee</a> · <a href="https://www.google.com/maps/search/?api=1&query=Summer%20Shades%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Summer Shades</a>
-          <br><br>
-          <span class="label">Shop</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Books%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Edgartown Books</a> · <a href="https://www.google.com/maps/search/?api=1&query=The%20Blackdog%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Blackdog</a>
+      <div class="party-day">
+        <h3 class="party-date">Friday, Aug 7</h3>
+
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">Late</span>
+            <span class="party-name"
+              >Noman's — Bar/Lounge/Food, Friday-late party vibes</span
+            >
+          </div>
+          <span class="party-tag muted">Walk-in</span>
         </div>
       </div>
-    </div>
 
-    <div class="stop" id="westtisbury">
-      <div class="stop-marker">🌿</div>
-      <div class="card">
-        <div class="card-head"><span class="icon">🌿</span><h3>West Tisbury</h3></div>
-        <p class="vibe">Peaceful farms, nature preserves, and Lambert's Cove Beach — great for a slower, scenic stop.</p>
-      </div>
-    </div>
+      <div class="party-day">
+        <h3 class="party-date">Saturday, Aug 8</h3>
 
-    <div class="stop sunset" id="chilmark">
-      <div class="stop-marker">🌅</div>
-      <div class="card">
-        <div class="card-head"><span class="icon">🌅</span><h3>Chilmark</h3><span class="tag">sunset</span></div>
-        <p class="vibe">Quiet, scenic, and coastal, with Menemsha fishing village views.</p>
-        <hr class="divider">
-        <div class="eatshop">
-          <span class="label">Eat</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=Larsen%27s%20Fish%20Market%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Larsen's Fish Market</a> · <a href="https://www.google.com/maps/search/?api=1&query=Homeport%20Restaurant%20%26%20Oyster%20Bar%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Homeport Restaurant &amp; Oyster Bar</a>
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">3–9PM</span>
+            <span class="party-name"
+              ><a
+                href="https://posh.vip/e/yellow-party-marthas-vineyard-in-collaboration-with-the-vineyard-legacy"
+                target="_blank"
+                rel="noopener"
+                >Yellow Party</a
+              >
+              — Vineyard Haven</span
+            >
+          </div>
+          <span class="party-tag">Posh App</span>
+        </div>
+
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">10PM–2AM</span>
+            <span class="party-name">NOIR en Blanc</span>
+          </div>
+          <span class="party-tag muted">Posh App</span>
         </div>
       </div>
-    </div>
 
-    <div class="stop sunset" id="aquinnah">
-      <div class="stop-marker">❤️</div>
-      <div class="card">
-        <div class="card-head"><span class="icon">❤️</span><h3>Aquinnah</h3><span class="tag">sunset</span></div>
-        <p class="vibe">Indigenous roots, Gay Head Light, and the stunning Aquinnah Clay Cliffs.</p>
-        <hr class="divider">
-        <div class="eatshop">
-          <span class="label">Eat / Stay</span>
-          <a href="https://www.google.com/maps/search/?api=1&query=The%20Outermost%20Inn%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">The Outermost Inn</a> · <a href="https://www.google.com/maps/search/?api=1&query=Orange%20Peel%20Bakery%2C%20Martha%27s%20Vineyard%2C%20MA" target="_blank" rel="noopener">Orange Peel Bakery</a>
+      <div class="party-day">
+        <h3 class="party-date">Sunday, Aug 9</h3>
+
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">3–8PM</span>
+            <span class="party-name"
+              ><a
+                href="https://www.eventbrite.com/e/envy-mv-day-party-2026-oak-bluffs-marthas-vineyard-tickets-1992058443429"
+                target="_blank"
+                rel="noopener"
+                >ENVY MV Day Party</a
+              >
+              — 11 Circuit Restaurant</span
+            >
+          </div>
+          <span class="party-tag">Eventbrite</span>
         </div>
       </div>
-    </div>
 
-  </div>
-</main>
+      <div class="party-day">
+        <h3 class="party-date">Monday, Aug 10</h3>
 
-<section class="todo" id="todo">
-  <div class="todo-card">
-    <h2>🧭 Quick To-Do List</h2>
-    <ul class="todo-list">
-      <li><span class="ticon">🌉</span><span><b>Jaws Bridge —</b> <span class="sub">jump in the water for a fun adventure between Oak Bluffs and Edgartown.</span></span></li>
-      <li><span class="ticon">🌅</span><span><b>Sunrise —</b> <span class="sub">Inkwell Beach or Edgartown Lighthouse.</span></span></li>
-      <li><span class="ticon">🌇</span><span><b>Sunset —</b> <span class="sub">Menemsha Beach or Aquinnah Cliffs Overlook.</span></span></li>
-      <li><span class="ticon">🎬</span><span><b>MVAAFF —</b> <span class="sub">watch for day tickets or showings once released.</span></span></li>
-    </ul>
-  </div>
-</section>
+        <div class="party-card">
+          <div class="party-row">
+            <span class="party-time">9:30PM–1AM</span>
+            <span class="party-name">Nothing But Anthems</span>
+          </div>
+          <span class="party-tag muted">Posh App</span>
+        </div>
+      </div>
+    </section>
 
-<footer>(BO) = Black-owned business · Martha's Vineyard Cheat Sheet</footer>
+    <section class="todo" id="todo">
+      <div class="todo-card">
+        <h2>🧭 Quick To-Do List</h2>
+        <ul class="todo-list">
+          <li>
+            <span class="ticon">🌉</span
+            ><span
+              ><b>Jaws Bridge —</b>
+              <span class="sub"
+                >jump in the water for a fun adventure between Oak Bluffs and
+                Edgartown.</span
+              ></span
+            >
+          </li>
+          <li>
+            <span class="ticon">🌅</span
+            ><span
+              ><b>Sunrise —</b>
+              <span class="sub"
+                >Inkwell Beach or Edgartown Lighthouse.</span
+              ></span
+            >
+          </li>
+          <li>
+            <span class="ticon">🌇</span
+            ><span
+              ><b>Sunset —</b>
+              <span class="sub"
+                >Menemsha Beach or Aquinnah Cliffs Overlook.</span
+              ></span
+            >
+          </li>
+          <li>
+            <span class="ticon">🎬</span
+            ><span
+              ><b>MVAAFF —</b>
+              <span class="sub"
+                >watch for day tickets or showings once released.</span
+              ></span
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
 
-</body>
+    <footer>(BO) = Black-owned business · Martha's Vineyard Cheat Sheet</footer>
+  </body>
 </html>
