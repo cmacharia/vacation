@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natasha's Martha's Vineyard Week</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#b23a6b;
+    --navy-deep:#8a2a56;
+    --teal:#ff6fa5;
+    --coral:#ff4f8b;
+    --sand:#fff3f7;
+    --foam:#ffe6f0;
+    --gold:#f5b8d0;
+    --ink:#7a1f4c;
+    --line:rgba(178,58,107,0.14);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(255,111,165,0.18), transparent 60%),
+      var(--sand);
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:60px;
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:0 18px;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--sand);
+    padding:44px 22px 60px;
+    overflow:hidden;
+    border-radius:0 0 28px 28px;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-2px;
+    height:46px;
+    background:
+      radial-gradient(circle at 10% 100%, transparent 12px, var(--sand) 13px) 0 0/40px 100%,
+      radial-gradient(circle at 90% 100%, transparent 12px, var(--sand) 13px) 0 0/40px 100%;
+    background-color:transparent;
+  }
+  .wave-svg{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:44px;display:block;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:11px;
+    font-weight:600;
+    color:var(--gold);
+    opacity:0;
+    animation:riseIn .7s ease forwards;
+  }
+  .countdown{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.22);
+    border-radius:100px;
+    padding:6px 14px 6px 8px;
+    margin-bottom:14px;
+    opacity:0;
+    animation:riseIn .7s ease forwards;
+  }
+  .countdown-num{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:17px;
+    color:#fff;
+    background:var(--coral);
+    width:32px;height:32px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .countdown-label{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.03em;
+    color:#ffe3ee;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:38px;
+    line-height:1.05;
+    margin:10px 0 6px;
+    opacity:0;
+    animation:riseIn .8s ease .1s forwards;
+  }
+  h1 em{
+    font-style:italic;
+    font-weight:500;
+    color:#ffd1e6;
+  }
+  .hero-sub{
+    font-size:14.5px;
+    color:#ffd9e8;
+    max-width:38ch;
+    opacity:0;
+    animation:riseIn .8s ease .22s forwards;
+  }
+  .hero-dates{
+    margin-top:20px;
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:riseIn .8s ease .34s forwards;
+  }
+  .pill{
+    font-size:11.5px;
+    font-weight:600;
+    padding:6px 13px;
+    border-radius:100px;
+    border:1px solid rgba(255,255,255,0.22);
+    color:#ffe3ee;
+    background:rgba(255,255,255,0.06);
+    letter-spacing:.02em;
+  }
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* Legend */
+  .legend{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    margin:22px 0 8px;
+    font-size:12px;
+    color:var(--navy);
+    opacity:.85;
+  }
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+  .dot.see{background:var(--teal);}
+  .dot.eat{background:var(--gold);}
+  .dot.party{background:var(--coral);}
+
+  /* Day accordion */
+  .day{
+    margin-top:16px;
+    background:#fff;
+    border-radius:18px;
+    border:1px solid var(--line);
+    box-shadow:0 4px 16px rgba(255,79,139,0.08);
+    overflow:hidden;
+    opacity:0;
+    animation:cardIn .6s ease forwards;
+  }
+  .day:nth-of-type(1){animation-delay:.42s;}
+  .day:nth-of-type(2){animation-delay:.5s;}
+  .day:nth-of-type(3){animation-delay:.58s;}
+  .day:nth-of-type(4){animation-delay:.66s;}
+  .day:nth-of-type(5){animation-delay:.74s;}
+  @keyframes cardIn{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .day-toggle{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:18px 18px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    text-align:left;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .day-toggle:active{background:var(--foam);}
+  .day-head-text{display:flex;flex-direction:column;gap:2px;}
+  .day-date{
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    font-weight:600;
+  }
+  .day-name{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:21px;
+    color:var(--navy);
+  }
+  .day-teaser{
+    font-size:12px;
+    color:#a5637e;
+    margin-top:1px;
+  }
+  .chevron{
+    flex-shrink:0;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--foam);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .35s cubic-bezier(.65,0,.35,1), background .3s ease;
+  }
+  .chevron svg{transition:transform .35s cubic-bezier(.65,0,.35,1);}
+  .day.open .chevron{background:var(--teal);}
+  .day.open .chevron svg{transform:rotate(180deg); stroke:#fff;}
+
+  .day-panel{
+    overflow:hidden;
+    max-height:0;
+    transition:max-height .45s cubic-bezier(.65,0,.35,1);
+  }
+  .day-content{
+    padding:0 18px 20px;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+
+  .item{
+    display:flex;
+    gap:10px;
+    padding:9px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .item:last-child{border-bottom:none;}
+  .item .dot{margin-top:6px;flex-shrink:0;}
+  .item-body{flex:1;}
+  .item-label{
+    font-size:10.5px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    font-weight:600;
+    color:#c17a97;
+    margin-bottom:1px;
+  }
+  .item-text{font-size:14.5px; line-height:1.42; color:var(--ink);}
+  .item-text b{font-weight:600;}
+  .mlink{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px dotted var(--coral);
+    font-weight:500;
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .mlink:active{color:var(--coral); border-color:transparent;}
+  .badge{
+    display:inline-block;
+    font-size:10px;
+    font-weight:600;
+    padding:1px 7px;
+    border-radius:100px;
+    background:#ffe1ee;
+    color:#b23a6b;
+    margin-left:6px;
+    vertical-align:1px;
+  }
+  .tag{
+    display:inline-block;
+    font-size:10px;
+    font-weight:600;
+    padding:3px 9px;
+    border-radius:100px;
+    background:#ffd6e6;
+    color:#c2185b;
+    margin-left:6px;
+    vertical-align:1px;
+    text-decoration:none;
+    transition:background .2s ease, transform .15s ease;
+  }
+  .tag:active{background:#ffbcd8; transform:scale(0.96);}
+
+  /* Other spots */
+  .other{
+    margin-top:18px;
+    background:var(--navy);
+    color:var(--sand);
+    border-radius:18px;
+    padding:20px 20px 22px;
+    opacity:0;
+    animation:cardIn .6s ease .82s forwards;
+    position:relative;
+    overflow:hidden;
+  }
+  .other::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(400px 160px at 100% 0%, rgba(255,255,255,0.08), transparent 60%);
+  }
+  .other h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:16px;
+    margin:0 0 8px;
+    color:#ffd1e6;
+  }
+  .other p{font-size:13.5px; line-height:1.6; margin:0; color:#ffe3ee;}
+  .other p .mlink{color:#ffe3ee; border-bottom-color:rgba(255,255,255,0.4);}
+  .other p .mlink:active{color:#fff; border-bottom-color:#fff;}
+
+  footer{
+    text-align:center;
+    font-size:11px;
+    color:#c17a97;
+    margin-top:26px;
+    letter-spacing:.04em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="countdown" id="countdown">
+    <span class="countdown-num" id="countdown-num">--</span>
+    <span class="countdown-label" id="countdown-label">days to go</span>
+  </div>
+  <div class="eyebrow">Edgartown · Aug 6–10, 2026</div>
+  <h1>Natasha's<br>Martha's <em>Vineyard</em></h1>
+  <p class="hero-sub">MVAAFF itinerary — sites, plates, and parties across the island, day by day.</p>
+  <div class="hero-dates">
+    <span class="pill">Thu 6</span>
+    <span class="pill">Fri 7</span>
+    <span class="pill">Sat 8</span>
+    <span class="pill">Sun 9</span>
+    <span class="pill">Mon 10</span>
+  </div>
+  <svg class="wave-svg" viewBox="0 0 500 44" preserveAspectRatio="none"><path d="M0,20 C60,40 120,0 180,18 C240,36 300,4 360,20 C420,36 460,10 500,22 L500,44 L0,44 Z" fill="#fff3f7"></path></svg>
+</div>
+
+<div class="wrap">
+
+  <div class="legend">
+    <span><span class="dot see"></span>Site See</span>
+    <span><span class="dot eat"></span>Eat &amp; Drink</span>
+    <span><span class="dot party"></span>Party</span>
+  </div>
+
+  <!-- THURSDAY -->
+  <div class="day" id="day-thu">
+    <button class="day-toggle" aria-expanded="false">
+      <div class="day-head-text">
+        <span class="day-date">Day 1 · Aug 6</span>
+        <span class="day-name">Thursday</span>
+        <span class="day-teaser">Lighthouse, Jaws Bridge &amp; the 11 Circuit kickoff</span>
+      </div>
+      <span class="chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b23a6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+    </button>
+    <div class="day-panel"><div class="day-panel-inner"><div class="day-content">
+
+      <div class="item"><span class="dot see"></span><div class="item-body">
+        <div class="item-label">Site See</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Flying%20Horses%20Carousel%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Flying Horses Carousel</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Jaws%20Bridge%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Jaws Bridge</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Lighthouse%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Edgartown Lighthouse</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Gingerbread%20Cottages%20Oak%20Bluffs%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Gingerbread Cottages Oak Bluffs</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Cest%20La%20Vie%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Cest La Vie</a> <span class="badge">Black-owned</span>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Chilmark%20General%20Store%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Chilmark General Store</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Coffee / Snack</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Mocha%20Motts%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Mocha Motts</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Orange%20Peel%20Bakery%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Orange Peel Bakery</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Lunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Vineyard%20Caribbean%20Cuisine%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Vineyard Caribbean Cuisine</a> <span class="badge">Black-owned</span></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Dinner</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Atria%20Edgartown%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Atria Edgartown</a> (fine dining) · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=19%20Raw%20Oyster%20Bar%20Prime%20Steakhouse%2C%20Edgartown%20MA" target="_blank" rel="noopener">19 Raw Oyster Bar Prime Steakhouse Edgartown</a> (fine dining)</div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">Party · 9:30pm–12:45am</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=11%20Circuit%20Restaurant%20and%20Bar%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">11 Circuit Restaurant and Bar</a> <a class="tag" href="https://www.eventbrite.com/e/jamaica-independence-party-tickets-1992533541460" target="_blank" rel="noopener">Eventbrite ↗</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">MVAAFF Summer White Party · Evening</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=30%20Island%20Inn%20Road%2C%20Oak%20Bluffs%2C%20MA%2002557" target="_blank" rel="noopener">Island Inn Conference Center, 30 Island Inn Road, Oak Bluffs</a> <a class="tag" href="https://www.mvaaff.com/tickets/" target="_blank" rel="noopener">MVAAFF Tickets ↗</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">Summer White After Party</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=11%20Circuit%20Ave%2C%20Oak%20Bluffs%2C%20MA%2002557" target="_blank" rel="noopener">11 Circuit Ave, Oak Bluffs</a> <a class="tag" href="https://www.mvaaff.com/tickets/" target="_blank" rel="noopener">MVAAFF Tickets ↗</a></div>
+      </div></div>
+
+    </div></div></div>
+  </div>
+
+  <!-- FRIDAY -->
+  <div class="day" id="day-fri">
+    <button class="day-toggle" aria-expanded="false">
+      <div class="day-head-text">
+        <span class="day-date">Day 2 · Aug 7</span>
+        <span class="day-name">Friday</span>
+        <span class="day-teaser">Aquinnah Cliffs, Circuit Ave galleries &amp; Noman's</span>
+      </div>
+      <span class="chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b23a6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+    </button>
+    <div class="day-panel"><div class="day-panel-inner"><div class="day-content">
+
+      <div class="item"><span class="dot see"></span><div class="item-body">
+        <div class="item-label">Site See</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Aquinnah%20Cliffs%20Overlook%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Aquinnah Cliffs Overlook</a>, Circuit Avenue Art — <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Cousen%20Rose%20Gallery%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Cousen Rose Gallery</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Island%20Life%20Studio%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Island Life Studio</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Mariposa%20Museum%20Oak%20Bluffs%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Mariposa Museum Oak Bluffs</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Bee%20Blunt%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Bee Blunt</a> <span class="badge">Black-owned</span>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=India%20Rose%20Collective%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">India Rose Collective</a> <span class="badge">Black-owned</span></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Brunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Bisquits%20restaurant%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Bisquits Martha's Vineyard</a> <span class="badge">Black-owned</span></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Lunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Dos%20Mas%20restaurant%20Oak%20Bluffs%20MA" target="_blank" rel="noopener">Dos Mas Oak Bluffs</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">Bar / Lounge / Food</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Noman%27s%20restaurant%20Oak%20Bluffs%20MA" target="_blank" rel="noopener">Noman's Oak Bluffs</a> — Friday late party vibes</div>
+      </div></div>
+
+    </div></div></div>
+  </div>
+
+  <!-- SATURDAY -->
+  <div class="day" id="day-sat">
+    <button class="day-toggle" aria-expanded="false">
+      <div class="day-head-text">
+        <span class="day-date">Day 3 · Aug 8</span>
+        <span class="day-name">Saturday</span>
+        <span class="day-teaser">Vineyard Haven by day, Yellow &amp; NOIR by night</span>
+      </div>
+      <span class="chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b23a6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+    </button>
+    <div class="day-panel"><div class="day-panel-inner"><div class="day-content">
+
+      <div class="item"><span class="dot see"></span><div class="item-body">
+        <div class="item-label">Site See</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Vineyard%20Haven%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Vineyard Haven</a>, <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Catboat%20Coffee%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Catboat Coffee</a> (coffee / Lebanese food)</div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Drinks</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Pelican%20Club%20restaurant%20Edgartown%20MA" target="_blank" rel="noopener">Pelican Club Edgartown</a> (Edgartown)</div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Dinner / Lunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Donovan%27s%20Reef%20restaurant%20Oak%20Bluffs%20MA" target="_blank" rel="noopener">Donovan's Reef Oak Bluffs</a> (drinks) <span class="badge">Black-owned</span> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Fat%20Ronnie%27s%20Burger%20Bar%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Fat Ronnie's Burger Bar</a> <span class="badge">Black-owned</span></div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">Yellow Party · 3–9pm</div>
+        <div class="item-text">Get tickets <a class="tag" href="https://posh.vip/e/yellow-party-marthas-vineyard-in-collaboration-with-the-vineyard-legacy" target="_blank" rel="noopener">Posh App ↗</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">NOIR en Blanc · 10pm–2am</div>
+        <div class="item-text">Get tickets <a class="tag" href="https://posh.vip/e/noir-en-blanc-ii-by-full-disclosure" target="_blank" rel="noopener">Posh App ↗</a></div>
+      </div></div>
+
+    </div></div></div>
+  </div>
+
+  <!-- SUNDAY -->
+  <div class="day" id="day-sun">
+    <button class="day-toggle" aria-expanded="false">
+      <div class="day-head-text">
+        <span class="day-date">Day 4 · Aug 9</span>
+        <span class="day-name">Sunday</span>
+        <span class="day-teaser">ENVY day party &amp; sunset at Menemsha</span>
+      </div>
+      <span class="chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b23a6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+    </button>
+    <div class="day-panel"><div class="day-panel-inner"><div class="day-content">
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Brunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Black%20Joy%20Kitchen%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Black Joy Kitchen Martha's Vineyard</a> <span class="badge">Black-owned</span></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Dinner / Lunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Winston%27s%20Kitchen%20Oak%20Bluffs%20MA" target="_blank" rel="noopener">Winston's Kitchen Oak Bluffs</a> <span class="badge">Black-owned</span> or <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Seafood%20Shanty%20restaurant%20Edgartown%20MA" target="_blank" rel="noopener">Seafood Shanty Edgartown</a> (views)</div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">Day Party · 3–8pm</div>
+        <div class="item-text">ENVY MV — <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=11%20Circuit%20Restaurant%20and%20Bar%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">11 Circuit Restaurant and Bar</a> <a class="tag" href="https://www.eventbrite.com/e/envy-mv-day-party-2026-oak-bluffs-marthas-vineyard-tickets-1992058443429" target="_blank" rel="noopener">Eventbrite ↗</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot see"></span><div class="item-body">
+        <div class="item-label">Sunset</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Menemsha%20Beach%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Menemsha Beach</a></div>
+      </div></div>
+
+    </div></div></div>
+  </div>
+
+  <!-- MONDAY -->
+  <div class="day" id="day-mon">
+    <button class="day-toggle" aria-expanded="false">
+      <div class="day-head-text">
+        <span class="day-date">Day 5 · Aug 10</span>
+        <span class="day-name">Monday</span>
+        <span class="day-teaser">Lobster rolls &amp; the last dance — Nothing But Anthems</span>
+      </div>
+      <span class="chevron"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#b23a6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+    </button>
+    <div class="day-panel"><div class="day-panel-inner"><div class="day-content">
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Brunch</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Sweet%20Life%20Cafe%20Oak%20Bluffs%20MA" target="_blank" rel="noopener">Sweet Life Cafe Oak Bluffs</a></div>
+      </div></div>
+
+      <div class="item"><span class="dot eat"></span><div class="item-body">
+        <div class="item-label">Lunch / Dinner</div>
+        <div class="item-text"><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Honorary%20Tavern%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Honorary Tavern Martha's Vineyard</a> <span class="badge">Black-owned</span> or <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Lookout%20Tavern%20Oak%20Bluffs%20MA" target="_blank" rel="noopener">Lookout Tavern Oak Bluffs</a> (best lobster rolls)</div>
+      </div></div>
+
+      <div class="item"><span class="dot party"></span><div class="item-body">
+        <div class="item-label">Nothing But Anthems · 9:30pm–1am</div>
+        <div class="item-text">Get tickets <a class="tag" href="https://posh.vip/e/nba-nothing-but-anthems" target="_blank" rel="noopener">Posh App ↗</a></div>
+      </div></div>
+
+    </div></div></div>
+  </div>
+
+  <div class="other">
+    <h3>Also worth a stop</h3>
+    <p><a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Nancy%27s%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Nancy's</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Back%20Door%20Donuts%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Back Door Donuts</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Edgartown%20Diner%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Edgartown Diner</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Toccopuro%20Coffee%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Toccopuro Coffee</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Aalia%27s%20Coffee%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Aalia's Coffee</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Black%20Dog%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Black Dog</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Summer%20Shades%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Summer Shades</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Ritz%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Ritz</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Larsen%27s%20Fish%20Market%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Larsen's Fish Market</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=Art%20Cliff%20Diner%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">Art Cliff Diner</a> · <a class="mlink" href="https://www.google.com/maps/search/?api=1&query=The%20Attic%2C%20Martha%27s%20Vineyard%20MA" target="_blank" rel="noopener">The Attic</a></p>
+  </div>
+
+  <footer>Tap any day to expand · Have a great week on the island 🎀</footer>
+
+</div>
+
+<script>
+  (function(){
+    var tripStart = new Date(2026, 7, 6); // Aug 6, 2026 (month is 0-indexed)
+    var tripEnd = new Date(2026, 7, 10);
+    var now = new Date();
+    var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    var numEl = document.getElementById('countdown-num');
+    var labelEl = document.getElementById('countdown-label');
+    var msPerDay = 1000 * 60 * 60 * 24;
+    var diffDays = Math.round((tripStart - startOfToday) / msPerDay);
+
+    if(diffDays > 0){
+      numEl.textContent = diffDays;
+      labelEl.textContent = diffDays === 1 ? 'day to go' : 'days to go';
+    } else if(diffDays === 0){
+      numEl.textContent = '🎉';
+      labelEl.textContent = 'it starts today!';
+    } else if(startOfToday <= tripEnd){
+      numEl.textContent = '🏝️';
+      labelEl.textContent = 'happening now';
+    } else {
+      numEl.textContent = '✓';
+      labelEl.textContent = 'trip complete';
+    }
+  })();
+
+  function openDay(day){
+    var panel = day.querySelector('.day-panel');
+    var toggle = day.querySelector('.day-toggle');
+    day.classList.add('open');
+    if(toggle) toggle.setAttribute('aria-expanded', 'true');
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+  }
+
+  function closeDay(day){
+    var panel = day.querySelector('.day-panel');
+    var toggle = day.querySelector('.day-toggle');
+    // lock in current (possibly 'none') height first so the collapse can animate
+    panel.style.maxHeight = panel.scrollHeight + 'px';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        panel.style.maxHeight = '0px';
+      });
+    });
+    day.classList.remove('open');
+    if(toggle) toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleDay(day){
+    if(day.classList.contains('open')){
+      closeDay(day);
+    } else {
+      openDay(day);
+    }
+  }
+
+  document.querySelectorAll('.day').forEach(function(day){
+    var panel = day.querySelector('.day-panel');
+    panel.addEventListener('transitionend', function(e){
+      if(e.propertyName === 'max-height' && day.classList.contains('open')){
+        panel.style.maxHeight = 'none';
+      }
+    });
+  });
+
+  document.querySelectorAll('.day-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      toggleDay(btn.closest('.day'));
+    });
+  });
+</script>
+
+</body>
+</html>
